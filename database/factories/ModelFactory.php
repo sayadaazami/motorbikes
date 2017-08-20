@@ -22,3 +22,14 @@ $factory->define(Motor\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Motor\MotorBike::class, function (Faker\Generator $faker) {
+    return [
+        'cc' => $faker->numberBetween(2, 6) * 50,
+        'color' => $faker->colorName,
+        'weight' => $faker->numberBetween(0, 5) * 25 + 100,
+        'price' => $faker->numberBetween(9000000, 200000000),
+        'image' => $faker->image(storage_path('app/public/motorbikes')),
+    ];
+});
