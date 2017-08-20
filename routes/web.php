@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'motorbike'], function ($router) {
+    $router->get('/create', 'MotorBikeController@create')->name('motorbike_create');
+    $router->post('/create-submit', 'MotorBikeController@store')->name('motorbike_create_submit');
+});

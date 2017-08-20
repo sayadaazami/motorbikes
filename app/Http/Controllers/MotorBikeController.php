@@ -14,7 +14,7 @@ class MotorBikeController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +24,7 @@ class MotorBikeController extends Controller
      */
     public function create()
     {
-        //
+        return view('motorbikes.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class MotorBikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
